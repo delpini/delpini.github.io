@@ -1,3 +1,4 @@
+```java
 package com.dmytrodanylyk.examples;
 
 import kotlin.Metadata;
@@ -114,3 +115,4 @@ final class LaunchParallelFragment$loadData$1 extends SuspendLambda implements F
         return Unit.INSTANCE;
     }
 }
+```

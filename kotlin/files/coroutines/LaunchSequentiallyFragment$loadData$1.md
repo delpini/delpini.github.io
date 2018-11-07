@@ -1,3 +1,4 @@
+```java
 package com.dmytrodanylyk.examples;
 
 import com.dmytrodanylyk.examples.LaunchSequentiallyFragment.DataProvider;
@@ -101,3 +102,4 @@ final class LaunchSequentiallyFragment$loadData$1 extends SuspendLambda implemen
         return Unit.INSTANCE;
     }
 }
+```

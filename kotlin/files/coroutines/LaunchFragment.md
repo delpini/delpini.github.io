@@ -1,3 +1,4 @@
+```java
 package com.dmytrodanylyk.examples;
 
 import android.os.Bundle;
@@ -146,3 +147,4 @@ public final class LaunchFragment extends Fragment {
         textView.setText(data);
     }
 }
+```

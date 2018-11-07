@@ -92,9 +92,9 @@ public final Object invokeSuspend(@NotNull Object result) {
     return Unit.INSTANCE;
 }
 ```
-* [LaunchFragment.java](files/coroutines/LaunchFragment.java)
-* [LaunchFragment$loadData$1.java](files/coroutines/LaunchFragment$loadData$1.java)
-* [LaunchFragment$DataProvider$loadData$2.java](files/coroutines/LaunchFragment$DataProvider$loadData$2.java)
+* [LaunchFragment.java](files/coroutines/LaunchFragment.md)
+* [LaunchFragment$loadData$1.java](files/coroutines/LaunchFragment$loadData$1.md)
+* [LaunchFragment$DataProvider$loadData$2.java](files/coroutines/LaunchFragment$DataProvider$loadData$2.md)
 
 #### Sequentially
 ```kotlin
@@ -109,8 +109,8 @@ private fun loadData() = GlobalScope.launch(uiDispatcher + job) {
 }
 ```
 
-* [LaunchSequentiallyFragment$loadData$1.java](files/coroutines/LaunchSequentiallyFragment$loadData$1.java)
-* [LaunchSequentiallyFragment$DataProvider$loadData$2.java](files/coroutines/LaunchSequentiallyFragment$DataProvider$loadData$2.java)
+* [LaunchSequentiallyFragment$loadData$1.java](files/coroutines/LaunchSequentiallyFragment$loadData$1.md)
+* [LaunchSequentiallyFragment$DataProvider$loadData$2.java](files/coroutines/LaunchSequentiallyFragment$DataProvider$loadData$2.md)
 
 #### Parallel (async)
 ```kotlin
@@ -128,10 +128,10 @@ private fun loadData() = GlobalScope.launch(uiDispatcher + job) {
 async는 Defered를 반환합니다. Defered은 light-weight non-blocking future로 결과를 전달하며, await()을 사용하면 최종 결과를 얻을 수 있습니다.
 Deferred는 또한 Job이기 때문에 필요할 경우 취소가 가능합니다.
 
-* [LaunchParallelFragment$loadData$1.java](files/coroutines/LaunchParallelFragment$loadData$1.java)
-* [LaunchParallelFragment$loadData$1$result1$1.java](files/coroutines/LaunchParallelFragment$loadData$1$result1$1.java)
-* [LaunchParallelFragment$loadData$1$result1$2.java](files/coroutines/LaunchParallelFragment$loadData$1$result1$2.java)
-* [LaunchSequentiallyFragment$DataProvider$loadData$2.java](files/coroutines/LaunchSequentiallyFragment$DataProvider$loadData$2.java)
+* [LaunchParallelFragment$loadData$1.java](files/coroutines/LaunchParallelFragment$loadData$1.md)
+* [LaunchParallelFragment$loadData$1$result1$1.java](files/coroutines/LaunchParallelFragment$loadData$1$result1$1.md)
+* [LaunchParallelFragment$loadData$1$result1$2.java](files/coroutines/LaunchParallelFragment$loadData$1$result1$2.md)
+* [LaunchSequentiallyFragment$DataProvider$loadData$2.java](files/coroutines/LaunchSequentiallyFragment$DataProvider$loadData$2.md)
 
 ## 참고
 * <https://medium.com/@kimtaesoo188/kotlin-weekly-63-android-coroutine-recipes-e077cb5f3d97>

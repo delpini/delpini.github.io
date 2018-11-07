@@ -1,3 +1,4 @@
+```java
 package com.dmytrodanylyk.examples;
 
 import com.dmytrodanylyk.examples.LaunchParallelFragment.DataProvider;
@@ -15,14 +16,14 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 @Metadata(bv = {1, 0, 3}, d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0002\b\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H@ø\u0001\u0000¢\u0006\u0004\b\u0003\u0010\u0004"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;", "invoke", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"}, k = 3, mv = {1, 1, 13})
-@DebugMetadata(c = "com/dmytrodanylyk/examples/LaunchParallelFragment$loadData$1$result1$1", f = "LaunchParallelFragment.kt", i = {}, l = {48, 48}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "com/dmytrodanylyk/examples/LaunchParallelFragment$loadData$1$result2$1", f = "LaunchParallelFragment.kt", i = {}, l = {49, 49}, m = "invokeSuspend", n = {}, s = {})
 /* compiled from: LaunchParallelFragment.kt */
-final class LaunchParallelFragment$loadData$1$result1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super String>, Object> {
+final class LaunchParallelFragment$loadData$1$result2$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super String>, Object> {
     int label;
     private CoroutineScope p$;
     final /* synthetic */ LaunchParallelFragment$loadData$1 this$0;
 
-    LaunchParallelFragment$loadData$1$result1$1(LaunchParallelFragment$loadData$1 launchParallelFragment$loadData$1, Continuation continuation) {
+    LaunchParallelFragment$loadData$1$result2$1(LaunchParallelFragment$loadData$1 launchParallelFragment$loadData$1, Continuation continuation) {
         this.this$0 = launchParallelFragment$loadData$1;
         super(2, continuation);
     }
@@ -30,14 +31,14 @@ final class LaunchParallelFragment$loadData$1$result1$1 extends SuspendLambda im
     @NotNull
     public final Continuation<Unit> create(@Nullable Object obj, @NotNull Continuation<?> continuation) {
         Intrinsics.checkParameterIsNotNull(continuation, "completion");
-        Continuation launchParallelFragment$loadData$1$result1$1 = new LaunchParallelFragment$loadData$1$result1$1(this.this$0, continuation);
+        Continuation launchParallelFragment$loadData$1$result2$1 = new LaunchParallelFragment$loadData$1$result2$1(this.this$0, continuation);
         CoroutineScope coroutineScope = (CoroutineScope) obj;
-        launchParallelFragment$loadData$1$result1$1.p$ = (CoroutineScope) obj;
-        return launchParallelFragment$loadData$1$result1$1;
+        launchParallelFragment$loadData$1$result2$1.p$ = (CoroutineScope) obj;
+        return launchParallelFragment$loadData$1$result2$1;
     }
 
     public final Object invoke(Object obj, Object obj2) {
-        return ((LaunchParallelFragment$loadData$1$result1$1) create(obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((LaunchParallelFragment$loadData$1$result2$1) create(obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
     }
 
     @Nullable
@@ -69,3 +70,4 @@ final class LaunchParallelFragment$loadData$1$result1$1 extends SuspendLambda im
         return loadData;
     }
 }
+```
