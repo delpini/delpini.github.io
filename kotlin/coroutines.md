@@ -1,7 +1,7 @@
 # Kotlin Coroutine
 
-https://kotlinlang.org/docs/reference/coroutines-overview.html
-https://github.com/Kotlin/kotlinx.coroutines
+* https://kotlinlang.org/docs/reference/coroutines-overview.html
+* https://github.com/Kotlin/kotlinx.coroutines
 
 10월 말에 [coroutines 1.0.0가 릴리즈](https://github.com/Kotlin/kotlinx.coroutines/releases/tag/1.0.0)되었으며, kotlin 1.3.0과 의존성이 있습니다.
 
