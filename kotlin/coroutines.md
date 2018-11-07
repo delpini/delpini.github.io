@@ -12,7 +12,7 @@ Provides Dispatchers.Main context for Android applications.
 
 ### build.gradle
 #### Project
-``` groovy
+```gradle
 buildscript {
     ...
     ext.kotlin_version = '1.3.0'
@@ -20,7 +20,7 @@ buildscript {
 }
 ```
 #### app
-```groovy
+```gradle
 dependencies {
     ...
     // coroutines
@@ -31,6 +31,7 @@ dependencies {
 ```
 
 ## 사용하기
+Source : https://github.com/dmytrodanylyk/coroutine-recipes
 
 ### suspend
 > Kotlin의 Coroutine은 suspend 키워드로 마킹된 함수를 CPS(Continuation Passing Style)로 변환하고, 이를 Coroutine Builder를 통해 적절한 스레드 상에서 시나리오에 따라 동작하도록 구성됩니다.
@@ -54,6 +55,42 @@ private fun loadData() = GlobalScope.launch(uiDispatcher + job) {
     hideLoading() // ui thread
 }
 ```
+
+위의 코드를 디컴파일 하면 아래와 같습니다.
+
+```java
+@Nullable
+public final Object invokeSuspend(@NotNull Object result) {
+    String loadData;
+    String coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+    switch (this.label) {
+        case 0:
+            if (result instanceof Failure) {
+                throw ((Failure) result).exception;
+            }
+            CoroutineScope coroutineScope = this.p$;
+            this.this$0.showLoading();
+            DataProvider access$getDataProvider$p = this.this$0.dataProvider;
+            this.label = 1;
+            loadData = access$getDataProvider$p.loadData(this);
+            if (loadData == coroutine_suspended) {
+                return coroutine_suspended;
+            }
+            break;
+        case 1:
+            if (!(result instanceof Failure)) {
+                loadData = result;
+                break;
+            }
+            throw ((Failure) result).exception;
+        default:
+            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+    }
+    this.this$0.showText(loadData);
+    this.this$0.hideLoading();
+    return Unit.INSTANCE;
+}
+```
 * [LaunchFragment.java](files/coroutines/LaunchFragment.java)
 * [LaunchFragment$loadData$1.java](files/coroutines/LaunchFragment$loadData$1.java)
 * [LaunchFragment$DataProvider$loadData$2.java](files/coroutines/LaunchFragment$DataProvider$loadData$2.java)
@@ -74,7 +111,7 @@ private fun loadData() = GlobalScope.launch(uiDispatcher + job) {
 * [LaunchSequentiallyFragment$loadData$1.java](files/coroutines/LaunchSequentiallyFragment$loadData$1.java)
 * [LaunchSequentiallyFragment$DataProvider$loadData$2.java](files/coroutines/LaunchSequentiallyFragment$DataProvider$loadData$2.java)
 
-#### Parallel
+#### Parallel (async)
 ```kotlin
 private fun loadData() = GlobalScope.launch(uiDispatcher + job) {
     showLoading()
@@ -87,6 +124,9 @@ private fun loadData() = GlobalScope.launch(uiDispatcher + job) {
     hideLoading()
 }
 ```
+async는 Defered를 반환합니다. Defered은 light-weight non-blocking future로 결과를 전달하며, await()을 사용하면 최종 결과를 얻을 수 있습니다.
+Deferred는 또한 Job이기 때문에 필요할 경우 취소가 가능합니다.
+
 * [LaunchParallelFragment$loadData$1.java](files/coroutines/LaunchParallelFragment$loadData$1.java)
 * [LaunchParallelFragment$loadData$1$result1$1.java](files/coroutines/LaunchParallelFragment$loadData$1$result1$1.java)
 * [LaunchParallelFragment$loadData$1$result1$2.java](files/coroutines/LaunchParallelFragment$loadData$1$result1$2.java)
@@ -94,7 +134,6 @@ private fun loadData() = GlobalScope.launch(uiDispatcher + job) {
 
 ## 참고
 * https://medium.com/@kimtaesoo188/kotlin-weekly-63-android-coroutine-recipes-e077cb5f3d97
-* https://github.com/dmytrodanylyk/coroutine-recipes
 * https://medium.com/til-kotlin-ko/kotlin%EC%9D%98-coroutine%EC%9D%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8F%99%EC%9E%91%ED%95%98%EB%8A%94%EA%B0%80-789291da6a50
 
 
@@ -131,6 +170,7 @@ void Update() {
     if (Input.GetKeyDown("f")) {
         StartCoroutine("Fade");
     }
+    // do something...
 }
 ```
 
