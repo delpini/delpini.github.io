@@ -148,7 +148,7 @@ Deferred는 또한 Job이기 때문에 필요할 경우 취소가 가능합니�
 
 ## Example
 
-```C#
+```csharp
 void Fade() {
     for (float f = 1f; f >= 0; f -= 0.1f) {
         Color c = renderer.material.color;
@@ -159,7 +159,7 @@ void Fade() {
 ```
 위의 Fade out 메소드가 호출될 경우, Fade out 효과가 순식간에 처리되어, 서서히 감소되는 효과를 얻을 수 없습니다.
 
-```C#
+```csharp
 IEnumerator Fade() {
     for (float f = 1f; f >= 0; f -= 0.1f) {
         Color c = renderer.material.color;
@@ -180,7 +180,7 @@ void Update() {
 위의 코드에서 Update는 매 프레임 마다 호출되며, Fade() 함수 내부의 **yield**를 통해 유니티에 제어권을 돌려주고, 다음 프레임에서 중지한 곳 부터 실행할 수 있습니다.
 
 ### WWW
-```CSharp
+```csharp
 // Get the latest webcam shot from outside "Friday's" in Times Square
 using UnityEngine;
 using System.Collections;
