@@ -1,7 +1,7 @@
 # Kotlin Coroutine
 
-* https://kotlinlang.org/docs/reference/coroutines-overview.html
-* https://github.com/Kotlin/kotlinx.coroutines
+* <https://kotlinlang.org/docs/reference/coroutines-overview.html>
+* <https://github.com/Kotlin/kotlinx.coroutines>
 
 10월 말에 [coroutines 1.0.0가 릴리즈](https://github.com/Kotlin/kotlinx.coroutines/releases/tag/1.0.0)되었으며, kotlin 1.3.0과 의존성이 있습니다.
 
@@ -32,7 +32,7 @@ dependencies {
 ```
 
 ## 사용하기
-Source : https://github.com/dmytrodanylyk/coroutine-recipes
+Source : <https://github.com/dmytrodanylyk/coroutine-recipes>
 
 ### suspend
 > Kotlin의 Coroutine은 suspend 키워드로 마킹된 함수를 CPS(Continuation Passing Style)로 변환하고, 이를 Coroutine Builder를 통해 적절한 스레드 상에서 시나리오에 따라 동작하도록 구성됩니다.
@@ -134,8 +134,8 @@ Deferred는 또한 Job이기 때문에 필요할 경우 취소가 가능합니�
 * [LaunchSequentiallyFragment$DataProvider$loadData$2.java](files/coroutines/LaunchSequentiallyFragment$DataProvider$loadData$2.java)
 
 ## 참고
-* https://medium.com/@kimtaesoo188/kotlin-weekly-63-android-coroutine-recipes-e077cb5f3d97
-* https://medium.com/til-kotlin-ko/kotlin%EC%9D%98-coroutine%EC%9D%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8F%99%EC%9E%91%ED%95%98%EB%8A%94%EA%B0%80-789291da6a50
+* <https://medium.com/@kimtaesoo188/kotlin-weekly-63-android-coroutine-recipes-e077cb5f3d97>
+* <https://medium.com/til-kotlin-ko/kotlin%EC%9D%98-coroutine%EC%9D%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8F%99%EC%9E%91%ED%95%98%EB%8A%94%EA%B0%80-789291da6a50>
 
 
 # Unity(C#)의 Coroutine은?
